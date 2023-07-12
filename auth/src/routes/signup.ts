@@ -1,10 +1,9 @@
 import express, { Request, Response } from "express";
 import { body } from "express-validator";
 import jwt from "jsonwebtoken";
-
+import { BadRequestError, validateRequest } from "@rh-eticket/common";
 import { User } from "../models/user";
-import { BadRequestError } from "../errors/bad-request-error";
-import { validateRequest } from "../middlewares/validate-request";
+
 //kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
 
 const router = express.Router();

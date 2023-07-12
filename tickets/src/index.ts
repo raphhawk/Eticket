@@ -5,9 +5,11 @@ const start = async () => {
   if (!process.env.JWT_KEY) {
     throw new Error("JWT_KEY must be declared");
   }
+
   if (!process.env.MONGO_URI) {
     throw new Error("MONGO_URI must be declared");
   }
+
   try {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("Connected to MongoDb");
@@ -15,7 +17,7 @@ const start = async () => {
     console.error(err);
   }
   app.listen(3000, () => {
-    console.log("Listening on port: 3000 [Auth]");
+    console.log("Listening on port: 3000 [Tickets]");
   });
 };
 
