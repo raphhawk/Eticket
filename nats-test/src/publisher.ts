@@ -1,4 +1,3 @@
-import { log } from "console";
 import nats from "node-nats-streaming";
 
 console.clear();
